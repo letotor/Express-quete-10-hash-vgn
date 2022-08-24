@@ -11,7 +11,7 @@ const validate = (data, forCreation = true) => {
     email: Joi.string().email().max(255).presence(presence),
     firstname: Joi.string().max(255).presence(presence),
     lastname: Joi.string().max(255).presence(presence),
-    password : Joi.string().max(255).presence(presence),
+    password : Joi.string(8).max(255).presence(presence),
     city: Joi.string().allow(null, '').max(255),
     language: Joi.string().allow(null, '').max(255),
   }).validate(data, { abortEarly: false }).error;
